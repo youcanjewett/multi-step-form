@@ -1,13 +1,13 @@
-
+import StepTracker from './components/StepTracker'
 import './App.css'
 
 function App() {
 
   return (
     <>
-      Hello World
+      <StepTracker />
     </>
   )
 }
 
-export default App
+export default App;
