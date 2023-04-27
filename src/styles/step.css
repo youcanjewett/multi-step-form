@@ -1,0 +1,19 @@
+.step-number {
+    color: var(--white);
+    background-color: transparent;
+    border-style: solid;
+    border-color: var(--white);
+    border-width: thin;
+    border-radius: 50%;
+    padding: .75rem 1.1rem;
+    width: auto;
+    height: auto;
+}
+
+.active-background{
+    background-color: var(--light-blue);
+}
+
+.step-number:not(:last-child) {
+    margin-right: 1rem;
+}

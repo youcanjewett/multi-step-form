@@ -7,7 +7,7 @@ const StepTracker = ({ steps, activeStep }) => {
       {steps.map((step, index) => {
         return (
           <Step
-            key={index}
+            key={step.label}
             step={step}
             active={index===activeStep}
             currentIndex={index}
