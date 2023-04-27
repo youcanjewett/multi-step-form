@@ -1,13 +1,13 @@
-
+import Page from './components/Page';
 import './App.css'
 
 function App() {
 
   return (
     <>
-      Hello World
+      <Page />
     </>
   )
 }
 
-export default App
+export default App;
