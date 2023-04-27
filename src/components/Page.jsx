@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import StepTracker from "./StepTracker"
 import Card from "./Card";
+import './../index.css';
 
 const Page = () => {
 
@@ -34,10 +35,10 @@ const Page = () => {
       }, []);
 
     return (
-        <>
+        <article>
             <StepTracker steps={steps} activeStep={activeStep}/>
             <Card activeStep={activeStep} handleBack={handleBack} handleNext={handleNext}/>
-        </>
+        </article>
     )
 }
 

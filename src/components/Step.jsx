@@ -1,10 +1,12 @@
-const Step = ({step, activeStep, currentIndex}) => {
+import './../styles/step.css';
+
+const Step = ({step, active, currentIndex}) => {
 
     return (
         <>
-            <div>{currentIndex === activeStep ? "I'm active!" : currentIndex + 1}</div>
-            <div>{step.label}</div>
-            <div>{step.description}</div>
+            <div className={"step-number"}>{active ? "I'm active!" : currentIndex + 1}</div>
+            {/* <div>{step.label}</div>
+            <div>{step.description}</div> */}
         </>
     )
 }

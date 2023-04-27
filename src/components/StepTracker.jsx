@@ -1,18 +1,20 @@
 import Step from "./Step";
+import './../styles/stepTracker.css';
 
 const StepTracker = ({ steps, activeStep }) => {
   return (
-    <>
-      {steps.map((step) => {
+    <section>
+      {steps.map((step, index) => {
         return (
           <Step
+            key={index}
             step={step}
-            activeStep={activeStep}
-            currentIndex={steps.indexOf(step)}
+            active={index===activeStep}
+            currentIndex={index}
           />
         );
       })}
-    </>
+    </section>
   );
 };
 
