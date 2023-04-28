@@ -12,6 +12,7 @@ const Step = ({step, active, currentIndex}) => {
         <>
             <div className={stepClass}>{currentIndex + 1}</div>
         {/* will uncomment these when I start working on desktop styles */}
+
             {/* <div>{step.label}</div>
             <div>{step.description}</div> */}
         </>
