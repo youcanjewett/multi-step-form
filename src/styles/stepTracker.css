@@ -1,6 +1,7 @@
 .step-tracker-container {
   display: flex;
   flex-direction: row;
+  position: relative;
   justify-content: center;
   align-items: center;
   min-height: 10.75rem;

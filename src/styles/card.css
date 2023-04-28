@@ -1,0 +1,11 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    position: absolute;
+    top: 9rem;
+    width: 92%;
+    padding: 2rem 1.5rem;
+    margin: 0 4%;
+    border-radius: 1rem;
+}
