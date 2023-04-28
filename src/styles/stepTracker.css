@@ -1,0 +1,10 @@
+.step-tracker-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 10.75rem;
+  width: 100%;
+  background-image: url('bg-sidebar-mobile.svg');
+  background-size: cover;
+}
