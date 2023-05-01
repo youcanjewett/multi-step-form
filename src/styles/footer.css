@@ -1,0 +1,40 @@
+.footer-container {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    min-height: 4.5rem;
+    width: 100%;
+    background-color: var(--white);
+}
+
+.back-button {
+    border: none;
+    padding: 0 1rem;
+    margin: 0;
+    text-decoration: none;
+    background: none;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--cool-gray);
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.next-button {
+    border: none;
+    padding: 0 1rem;
+    /* so the button stays to the right when back buton not displayed */
+    margin: 1rem 1rem 1rem auto; 
+    text-decoration: none;
+    background-color: var(--marine-blue);
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--white);
+    border-radius: .5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+}
+
+.confirm-background {
+    background-color: var(--purple-blue);
+}

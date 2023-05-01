@@ -2,10 +2,8 @@
     display: flex;
     flex-direction: column;
     background-color: var(--white);
-    position: absolute;
-    top: 9rem;
-    width: 92%;
+    margin-top: -3rem;
+    min-width: 21.5rem;
     padding: 2rem 1.5rem;
-    margin: 0 4%;
     border-radius: 1rem;
 }
