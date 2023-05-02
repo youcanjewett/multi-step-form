@@ -1,6 +1,7 @@
 import React, {useState, useCallback} from 'react';
 import StepTracker from "./StepTracker"
 import Card from "./Card";
+import Footer from './Footer';
 import './../index.css';
 
 const Page = () => {
@@ -35,9 +36,15 @@ const Page = () => {
       }, []);
 
     return (
-        <article>
-            <StepTracker steps={steps} activeStep={activeStep}/>
-            <Card activeStep={activeStep} handleBack={handleBack} handleNext={handleNext}/>
+        <article className='page-container'>
+            <header className='header'>
+
+                <StepTracker steps={steps} activeStep={activeStep}/>
+            </header>
+            <Card activeStep={activeStep} />
+          
+            {/* will need logic here to only display footer component in mobile */}
+            <Footer activeStep={activeStep} handleBack={handleBack} handleNext={handleNext}/>
         </article>
     )
 }

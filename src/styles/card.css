@@ -1,0 +1,9 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    margin-top: -3rem;
+    min-width: 21.5rem;
+    padding: 2rem 1.5rem;
+    border-radius: 1rem;
+}
