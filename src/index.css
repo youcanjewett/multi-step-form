@@ -36,6 +36,17 @@ body {
   background-color: var(--light-blue);
 }
 
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cool-gray);
+}
+
 .page-container {
   display: flex;
   flex-direction: column;

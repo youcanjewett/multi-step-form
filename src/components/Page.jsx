@@ -36,16 +36,15 @@ const Page = () => {
       }, []);
 
     return (
-        <article className='page-container'>
+        <main className='page-container'>
             <header className='header'>
-
                 <StepTracker steps={steps} activeStep={activeStep}/>
             </header>
             <Card activeStep={activeStep} />
           
             {/* will need logic here to only display footer component in mobile */}
             <Footer activeStep={activeStep} handleBack={handleBack} handleNext={handleNext}/>
-        </article>
+        </main>
     )
 }
 
