@@ -2,11 +2,13 @@ import FormTitle from "./FormTitle";
 import React, { useState } from "react";
 import "./../../styles/footer.css";
 
-const PersonalInfo = (usernameError) => {
+
+const PersonalInfo = ({ userInfo, setUserInfo }) => {
   const title = "Personal Info";
   const subtitle = "Please enter your name, email address, and phone number.";
 
-  
+  const [error, setError] = useState(true);
+
 
   // will add state to update form object with user input
 
@@ -18,6 +20,7 @@ const PersonalInfo = (usernameError) => {
         {/* still need to add form validation */}
         <label for="name">Name</label>
         {usernameError && <span className="error">error message here</span>}
+
         <br />
         <input type="text" id="name" placeholder="e.g. Stephen King" required />
         <br />

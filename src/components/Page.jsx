@@ -7,12 +7,14 @@ import "./../index.css";
 const Page = () => {
  
   const [activeStep, setActiveStep] = useState(0);
+
   const [usernameError, setUsernameError] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: ''
   });
+
 
   const steps = [
     {
@@ -60,12 +62,15 @@ const Page = () => {
       </header>
       <Card activeStep={activeStep} usernameError={usernameError}/>
 
+
       {/* will need logic here to only display footer component in mobile */}
       <Footer
         activeStep={activeStep}
         handleBack={handleBack}
         handleNext={handleNext}
+
         validateFormData={validateFormData}
+
         
       />
     </main>

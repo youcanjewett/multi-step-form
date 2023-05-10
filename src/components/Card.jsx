@@ -1,3 +1,4 @@
+
 import PersonalInfo from "./cardContent/PersonalInfo";
 import SelectYourPlan from "./cardContent/SelectYourPlan";
 import "./../styles/card.css";
@@ -11,5 +12,6 @@ const Card = ({ activeStep, usernameError }) => {
     </div>
   );
 };
+
 
 export default Card;
