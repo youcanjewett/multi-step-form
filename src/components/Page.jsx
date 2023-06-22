@@ -18,6 +18,7 @@ const Page = () => {
     phone: "",
   });
 
+
   const steps = [
     {
       label: "Step 1",
@@ -89,6 +90,7 @@ const Page = () => {
         setUsername={setUsername}
         fieldError={fieldError}
       />
+
 
       {/* will need logic here to only display footer component in mobile */}
       <Footer

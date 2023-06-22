@@ -1,3 +1,4 @@
+
 import PersonalInfo from "./cardContent/PersonalInfo";
 import SelectYourPlan from "./cardContent/SelectYourPlan";
 import "./../styles/card.css";
@@ -20,5 +21,6 @@ const Card = ({ activeStep, formData, setUsername, fieldError }) => {
     </div>
   );
 };
+
 
 export default Card;
