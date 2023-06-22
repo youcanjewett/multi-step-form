@@ -5,14 +5,10 @@ import ErrorMessage from "./ErrorMessage";
 import "./../../styles/footer.css";
 import "./../../styles/card.css";
 
-const PersonalInfo = ({ name, email, phone, setUsername, fieldError }) => {
+const PersonalInfo = ({ name, email, phone, setName, setEmail, setPhone, fieldError }) => {
   const { nameIsValid, emailIsValid, phoneIsValid } = fieldError;
   const title = "Personal Info";
   const subtitle = "Please enter your name, email address, and phone number.";
-
-  const handleChange = (input) => {
-    setUsername(input.target.value);
-  };
 
   const nameError = classNames({
     "error-border": !nameIsValid,
@@ -26,8 +22,6 @@ const PersonalInfo = ({ name, email, phone, setUsername, fieldError }) => {
     "error-border": !phoneIsValid,
   });
 
-  // will add state to update form object with user input
-
   return (
     <form>
       <FormTitle title={title} subtitle={subtitle} />
@@ -39,11 +33,12 @@ const PersonalInfo = ({ name, email, phone, setUsername, fieldError }) => {
           {!nameIsValid && <ErrorMessage />}
         </div>
         <input
+          value = {name}
           type="text"
           className={nameError}
           id="name"
           placeholder="e.g. Stephen King"
-          onChange={handleChange}
+          onChange={setName}
           required
         />
         <br />
@@ -52,10 +47,12 @@ const PersonalInfo = ({ name, email, phone, setUsername, fieldError }) => {
           {!emailIsValid && <ErrorMessage />}
         </div>
         <input
+          value = {email}
           type="email"
           id="email"
           className={emailError}
           placeholder="e.g. stephenking@lorem.com"
+          onChange={setEmail}
           pattern=".+@globex\.com"
           size="30"
           required
@@ -66,10 +63,12 @@ const PersonalInfo = ({ name, email, phone, setUsername, fieldError }) => {
           {!phoneIsValid && <ErrorMessage />}
         </div>
         <input
+          value = {phone}
           type="tel"
           id="tel"
           className={phoneError}
           placeholder="e.g. +1 234 567 8901"
+          onChange={setPhone}
           required
         />
         <br />
