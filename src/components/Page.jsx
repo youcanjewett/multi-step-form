@@ -5,13 +5,17 @@ import Footer from "./Footer";
 import "./../index.css";
 
 const Page = () => {
- 
   const [activeStep, setActiveStep] = useState(0);
-  const [usernameError, setUsernameError] = useState(false);
+  const [fieldError, setFieldError] = useState({
+    nameIsValid: true,
+    emailIsValid: true,
+    phoneIsValid: true
+  });
+
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: ''
+    name: "",
+    email: "",
+    phone: "",
   });
 
   const steps = [
@@ -33,40 +37,64 @@ const Page = () => {
     },
   ];
 
-  const validateFormData = ({activeStep}) => {
+  const setUsername = (input) => {
+    setFormData((formData) => ({ ...formData, name: input }));
+  };
 
-    // maybe put a switch statement here to do a different validation for each card?
-    // won't be able to find by Id from another card
-    // should maybe also move the validations to its own component
-    let username = document.getElementById("name").value;
-    username !== '' ? (
-      setFormData({...formData, name: username}),
-      handleNext()
-     ) : setUsernameError(true);
-  }
+  const validateFormData = useCallback(() => {
+    let isValid;
+    switch (activeStep) {
+      case 0:
+        isValid = formData.name !== "";
+        setFieldError((fieldError) => ({
+          ...fieldError,
+          nameIsValid: isValid,
+        }));
+      case 1:
+        isValid = formData.email !== "";
+        setFieldError((fieldError) => ({
+          ...fieldError,
+          emailIsValid: isValid
+        }));
+      case 2:
+        isValid = formData.phone !== "";
+        setFieldError((fieldError) => ({
+          ...fieldError,
+          phoneIsValid: isValid
+        }));
+    }
+
+    return isValid;
+  }, [formData, fieldError]);
 
   const handleNext = useCallback(() => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  }, []);
+    let nextStep = validateFormData();
+    if (nextStep) {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
+  }, [formData, activeStep, fieldError]);
 
   const handleBack = useCallback(() => {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  }, []);
+  }, [activeStep]);
 
   return (
     <main className="page-container">
       <header className="header">
         <StepTracker steps={steps} activeStep={activeStep} />
       </header>
-      <Card activeStep={activeStep} usernameError={usernameError}/>
+      <Card
+        activeStep={activeStep}
+        formData={formData}
+        setUsername={setUsername}
+        fieldError={fieldError}
+      />
 
       {/* will need logic here to only display footer component in mobile */}
       <Footer
         activeStep={activeStep}
         handleBack={handleBack}
         handleNext={handleNext}
-        validateFormData={validateFormData}
-        
       />
     </main>
   );

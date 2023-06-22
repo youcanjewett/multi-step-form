@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import "./../styles/footer.css";
 
-const Footer = ({ activeStep, handleNext, handleBack, validateFormData}) => {
+const Footer = ({ activeStep, handleNext, handleBack}) => {
 
 
 
@@ -17,7 +17,7 @@ const Footer = ({ activeStep, handleNext, handleBack, validateFormData}) => {
           Go Back
         </button>
       )}
-      <button onClick={validateFormData} className={nextButton}>
+      <button onClick={handleNext} className={nextButton}>
         {activeStep === 3 ? "Confirm" : "Next Step"}
       </button>
     </div>
