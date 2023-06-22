@@ -38,8 +38,17 @@ const Page = () => {
     },
   ];
 
-  const setUsername = (input) => {
-    setFormData((formData) => ({ ...formData, name: input }));
+
+  const setName = (input) => {
+    setFormData((formData) => ({ ...formData, name: input.target.value }));
+  };
+
+  const setEmail = (input) => {
+    setFormData((formData) => ({ ...formData, email: input.target.value }));
+  };
+
+  const setPhone = (input) => {
+    setFormData((formData) => ({ ...formData, phone: input.target.value }));
   };
 
   const validateFormData = useCallback(() => {
@@ -85,9 +94,11 @@ const Page = () => {
         <StepTracker steps={steps} activeStep={activeStep} />
       </header>
       <Card
-        activeStep={activeStep}
         formData={formData}
-        setUsername={setUsername}
+        activeStep={activeStep}
+        setName={setName}
+        setEmail={setEmail}
+        setPhone={setPhone}
         fieldError={fieldError}
       />
 
