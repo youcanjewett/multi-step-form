@@ -1,7 +1,9 @@
 import classNames from 'classnames';
 import "./../styles/footer.css";
 
-const Footer = ({ activeStep, handleNext, handleBack }) => {
+const Footer = ({ activeStep, handleNext, handleBack}) => {
+
+
 
     const nextButton = classNames({
         'next-button': true,

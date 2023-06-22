@@ -31,3 +31,20 @@ input {
 input:not(:last-of-type) {
     margin-bottom: 1rem;
 }
+
+.label-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.error-msg {
+    color: var( --strawberry-red);
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.error-border {
+    border: solid red;
+    border-width: thin;
+}
