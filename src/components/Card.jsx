@@ -3,7 +3,9 @@ import PersonalInfo from "./cardContent/PersonalInfo";
 import SelectYourPlan from "./cardContent/SelectYourPlan";
 import "./../styles/card.css";
 
+
 const Card = ({ formData, activeStep, setName, setEmail, setPhone, fieldError }) => {
+
   const { name, email, phone } = formData;
   return (
     //will set up classname logic when I move to desktop styles

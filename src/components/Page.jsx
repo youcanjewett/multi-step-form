@@ -38,6 +38,7 @@ const Page = () => {
     },
   ];
 
+
   const setName = (input) => {
     setFormData((formData) => ({ ...formData, name: input.target.value }));
   };

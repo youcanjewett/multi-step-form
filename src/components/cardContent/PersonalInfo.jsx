@@ -6,6 +6,7 @@ import "./../../styles/footer.css";
 import "./../../styles/card.css";
 
 const PersonalInfo = ({ name, email, phone, setName, setEmail, setPhone, fieldError }) => {
+
   const { nameIsValid, emailIsValid, phoneIsValid } = fieldError;
   const title = "Personal Info";
   const subtitle = "Please enter your name, email address, and phone number.";
