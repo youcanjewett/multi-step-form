@@ -39,6 +39,7 @@ body {
 h1 {
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(--marine-blue);
 }
 
 h2 {
