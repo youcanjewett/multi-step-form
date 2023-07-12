@@ -16,6 +16,7 @@ const Page = () => {
     name: "",
     email: "",
     phone: "",
+    plan: "",
   });
 
 
@@ -50,6 +51,10 @@ const Page = () => {
   const setPhone = (input) => {
     setFormData((formData) => ({ ...formData, phone: input.target.value }));
   };
+
+  const setPlan = (input) => {
+    setFormData((formData) => ({...formData, plan: input}));
+  }
 
   const validateFormData = useCallback(() => {
     let isValid;
@@ -100,6 +105,7 @@ const Page = () => {
         setEmail={setEmail}
         setPhone={setPhone}
         fieldError={fieldError}
+        setPlan={setPlan}
       />
 
 

@@ -5,7 +5,7 @@ import iconAdvanced from "../../assets/icon-advanced.svg";
 import iconPro from "../../assets/icon-pro.svg";
 import PlanToggle from "./PlanToggle";
 
-const SelectYourPlan = () => {
+const SelectYourPlan = ({plan, setPlan}) => {
   const title = "Select your plan";
   const subtitle = "You have the option of monthly or yearly billing.";
 
@@ -43,7 +43,7 @@ const SelectYourPlan = () => {
           />
         );
       })}
-      <PlanToggle />
+      <PlanToggle plan={plan} setPlan={setPlan}/>
     </form>
   );
 };
