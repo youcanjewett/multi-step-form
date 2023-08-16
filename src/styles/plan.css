@@ -11,6 +11,16 @@
     margin-bottom: 0.75rem;
 }
 
+.plan-container:hover {
+    border: 1px solid var(--purple-blue);
+    background-color: var(--pastel-blue);
+}
+
+.active-plan {
+    border: 1px solid var(--purple-blue);
+    background-color: var(--pastel-blue);
+}
+
 .plan-icon {
     width: 2.5rem;
     height: 2.5rem;

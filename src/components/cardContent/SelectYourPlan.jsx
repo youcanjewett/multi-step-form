@@ -5,7 +5,7 @@ import iconAdvanced from "../../assets/icon-advanced.svg";
 import iconPro from "../../assets/icon-pro.svg";
 import PlanToggle from "./PlanToggle";
 
-const SelectYourPlan = ({plan, setPlan}) => {
+const SelectYourPlan = ({ plan, setPlan }) => {
   const title = "Select your plan";
   const subtitle = "You have the option of monthly or yearly billing.";
 
@@ -30,20 +30,33 @@ const SelectYourPlan = ({plan, setPlan}) => {
     },
   ];
 
+  const handleClick = ({ currentTarget }) => {
+    setPlan(currentTarget.id);
+  };
+
   return (
     <form>
       <FormTitle title={title} subtitle={subtitle} />
-      {planOptions.map((plan) => {
+      {planOptions.map((item) => {
+      const isPlanSelected = item.name === plan;
         return (
-          <Plan
-            key={plan.name}
-            icon={plan.icon}
-            name={plan.name}
-            cost={plan.monthlyCost}
-          />
+
+          <div
+            className= { isPlanSelected ? "plan-container active-plan" : "plan-container"}
+            id={item.name}
+            key={item.name}
+            onClick={handleClick}
+          >
+            <Plan
+              icon={item.icon}
+              name={item.name}
+              cost={item.monthlyCost}
+              setPlan={setPlan}
+            />
+          </div>
         );
       })}
-      <PlanToggle plan={plan} setPlan={setPlan}/>
+      <PlanToggle plan={plan} setPlan={setPlan} />
     </form>
   );
 };
